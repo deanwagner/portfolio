@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Dean Wagner">
+        <meta name="description" content="Portfolio Project">
+        <title>Dean Wagner</title>
+        <link rel="icon" sizes="any" type="image/svg+xml" href="./img/portfolio.svg">
+        <link rel="stylesheet" href="./res/portfolio.css">
+        <script type="module">
+            import Portfolio from './res/portfolio.js';
+            window.addEventListener('DOMContentLoaded', () => {
+                new Portfolio;
+            });
+        </script>
+    </head>
+    <!-- -------------- -!>
+           Portfolio
+
+        By: Dean Wagner
+      info@deanwagner.net
+
+        Assignment for:
+       The Odin Project
+      theodinproject.com
+    <--- -------------- -->
+    <body>
+        <header id="about">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1071.5">
+                <defs>
+                    <radialGradient id="header-bg-gradient">
+                        <stop offset="10%" stop-opacity="0.3" stop-color="white"/>
+                        <stop offset="100%" stop-opacity="0.3" stop-color="black"/>
+                    </radialGradient>
+                </defs>
+                <polygon class="color_layer" points="0 0 0 1071.5 1920 476 1920 0 0 0"/>
+                <polygon fill="url(#header-bg-gradient)" points="0 0 0 1071.5 1920 476 1920 0 0 0"/>
+            </svg>
+            <nav>
+                <div id="nav_links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div id="nav_styles">
+
+                </div>
+            </nav>
+            <section id="heading_wrapper">
+                <h1>Dean Wagner</h1>
+            </section>
+            <section id="about_me">
+                <h2>About Me</h2>
+                <p>This is not my actual portfolio. This was created for the
+                    <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css/lessons/personal-portfolio" rel="external" target="_blank">Personal Portfolio Assignment</a>
+                    of <a href="https://theodinproject.com/" rel="external" target="_blank">The Odin Project</a>.
+                    This portfolio only contains projects I have completed while making my way through the
+                    curriculum (which has been fun) and is not a reflection of my overall experience as a
+                    <em>Full-Stack Web and Mobile Application Developer</em>.</p>
+            </section>
+        </header>
+        <main id="projects">
+            <div id="main_title">
+                <h2>My Projects</h2>
+
+            </div>
+        </main>
+        <footer id="contact">
+            <section id="contact_info">
+                <h2>Contact Me</h2>
+                <a id="email" href="mailto:no@spam.net"><svg viewBox="0 0 24 24">
+                    <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z" />
+                </svg><span id="spam">no@spam.net</span></a>
+                <a id="voicemail" href="tel:+13218008010"><svg viewBox="0 0 24 24">
+                    <path d="M18.5,15A3.5,3.5 0 0,1 15,11.5A3.5,3.5 0 0,1 18.5,8A3.5,3.5 0 0,1 22,11.5A3.5,3.5 0 0,1 18.5,15M5.5,15A3.5,3.5 0 0,1 2,11.5A3.5,3.5 0 0,1 5.5,8A3.5,3.5 0 0,1 9,11.5A3.5,3.5 0 0,1 5.5,15M18.5,6A5.5,5.5 0 0,0 13,11.5C13,12.83 13.47,14.05 14.26,15H9.74C10.53,14.05 11,12.83 11,11.5A5.5,5.5 0 0,0 5.5,6A5.5,5.5 0 0,0 0,11.5A5.5,5.5 0 0,0 5.5,17H18.5A5.5,5.5 0 0,0 24,11.5A5.5,5.5 0 0,0 18.5,6Z" />
+                </svg>(321) 800-8010</a>
+                <address>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17,4H7A5,5 0 0,0 2,9V20H20A2,2 0 0,0 22,18V9A5,5 0 0,0 17,4M10,18H4V9A3,3 0 0,1 7,6A3,3 0 0,1 10,9V18M19,15H17V13H13V11H19V15M9,11H5V9H9V11Z" />
+                    </svg>
+                    PO Box 675<br>
+                    Lake Hughes CA 93532
+                </address>
+                <div id="social"></div>
+            </section>
+            <section id="second_photo">
+                <img src="./img/dean-wagner-2.jpg" alt="Photo of Dean Wagner" loading="lazy">
+            </section>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1071.5">
+                <defs>
+                    <radialGradient id="footer-bg-gradient">
+                        <stop offset="10%" stop-opacity="0.3" stop-color="white"/>
+                        <stop offset="100%" stop-opacity="0.3" stop-color="black"/>
+                    </radialGradient>
+                </defs>
+                <polygon class="color_layer" points="1920 1071.5 1920 0 0 595.5 0 1071.5 1920 1071.5"/>
+                <polygon fill="url(#footer-bg-gradient)" points="1920 1071.5 1920 0 0 595.5 0 1071.5 1920 1071.5"/>
+            </svg>
+        </footer>
+    </body>
+</html>
