@@ -234,15 +234,49 @@ footer {
     color: var(--color-bg);
     display: flex;
     gap: 1em;
+    justify-content: space-between;
     padding: 4em 10vw;
     position: relative;
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
 }
 
+footer a, footer a:link, footer a:visited {
+    color: var(--color-bg);
+    display: block;
+    font-size: 1.2em;
+    text-decoration: underline;
+    text-shadow: 0.1rem 0.1rem 0.1rem #000;
+    white-space: nowrap;
+}
+
+footer a:hover, footer a:focus, footer a:active {
+    color: var(--color-bg);
+    text-decoration: none;
+    text-shadow: 0 0 0.2rem var(--color-bg);
+}
+
+footer svg {
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem #000);
+    height: 1.5em;
+    margin-right: 0.3em;
+    vertical-align: middle;
+    width: 1.5em;
+}
+
+footer svg path {
+    fill: var(--color-bg);
+}
+
+footer a:hover svg,
+footer a:focus svg,
+footer a:active svg {
+    filter: drop-shadow(0 0 0.2rem var(--color-bg));
+    transform: rotate(360deg) scale(1.5);
+}
+
 footer #contact_info {
     align-items: flex-start;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: flex-end;
 }
@@ -252,38 +286,10 @@ footer #contact_info h2 {
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
 }
 
-footer a, footer a:link, footer a:visited {
-    color: var(--color-bg);
-    display: block;
-    font-size: 1.2em;
+footer #contact_info a,
+footer #contact_info a:link,
+footer #contact_info a:visited {
     margin: 0 0 0.5em;
-    text-decoration: underline;
-    text-shadow: 0.1rem 0.1rem 0.1rem #000;
-}
-
-footer a:hover, footer a:focus, footer a:active {
-    color: var(--color-bg);
-    text-decoration: none;
-    text-shadow: 0 0 0.2rem var(--color-bg);
-}
-
-footer #contact_info svg {
-    filter: drop-shadow(0.1rem 0.1rem 0.1rem #000);
-    height: 1.5em;
-    margin-right: 0.3em;
-    vertical-align: middle;
-    width: 1.5em;
-}
-
-footer #contact_info svg path {
-    fill: var(--color-bg);
-}
-
-footer #contact_info a:hover svg,
-footer #contact_info a:focus svg,
-footer #contact_info a:active svg {
-    filter: drop-shadow(0 0 0.2rem var(--color-bg));
-    transform: rotate(360deg) scale(1.5);
 }
 
 footer #contact_info address {
@@ -299,26 +305,11 @@ footer #contact_info address svg {
 }
 
 footer #social {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
+    flex-direction: column;
     gap: 0.3em;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-footer #second_photo {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
-footer #second_photo img {
-    box-shadow: 0 0 0.4em rgba(0,0,0,0.8);
-    height: auto;
-    max-height: 333px;
-    max-width: 500px;
-    width: 100%;
+    justify-content: flex-end;
 }
 
 footer > svg {
