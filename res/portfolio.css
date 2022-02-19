@@ -1,3 +1,15 @@
+
+/* * * * * * * * * * * *\
+ *     Portfolio       *
+ *                     *
+ *  By: Dean Wagner    *
+ * info@deanwagner.net *
+ *                     *
+ *   Assignment for:   *
+ *  The Odin Project   *
+ * theodinproject.com  *
+\* * * * * * * * * * * */
+
 :root {
     --color-accent : #0099cc;
     --color-bg     : #fafafa;
@@ -5,16 +17,23 @@
 
     --font-base    : Calibri, Arial, sans-serif;
     --font-title   : Georgia, Cambria, serif;
+
+    color-scheme: light;
 }
 
 * {
+    box-sizing: border-box;
     cursor: default;
-    scroll-behavior: smooth;
 }
+
+/* * * * * * * * *\
+ * Element Base  *
+\* * * * * * * * */
 
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -66,6 +85,10 @@ svg .color_layer {
     fill: var(--color-accent);
 }
 
+/* * * * * * * * *\
+ *    Header     *
+\* * * * * * * * */
+
 header {
     align-items: center;
     display: flex;
@@ -74,7 +97,8 @@ header {
     position: relative;
 }
 
-header svg {
+/* Upper BG Image */
+header > svg {
     filter: drop-shadow(0 0.5em 0.3em rgba(0,0,0,0.4));
     height: auto;
     left: 0;
@@ -91,6 +115,7 @@ header nav {
     display: flex;
     justify-content: space-between;
     left: 0;
+    opacity: 0.95;
     padding: 0.5em 1em;
     position: fixed;
     top: 0;
@@ -104,6 +129,7 @@ header nav a:visited {
     color: var(--color-bg);
     font-size: 1.5em;
     margin-right: 1em;
+    opacity: 1;
     text-decoration: none;
     text-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.8);
 }
@@ -115,9 +141,25 @@ header nav a:active {
     text-shadow: 0 0 0.3rem var(--color-bg);
 }
 
+header nav #nav_styles input {
+    visibility: hidden;
+}
+
+header nav #nav_styles #color_picker {
+    background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.2), rgba(0,0,0,0.2));
+    border: 1px solid #000;
+    border-radius: 0.9em;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.8);
+    cursor: pointer;
+    display: inline-block;
+    height: 1.8em;
+    padding: 0;
+    width: 1.8em;
+}
+
 header #heading_wrapper {
     align-items: flex-end;
-    background-image: url('../img/dean-wagner-1.jpg');
+    background-image: url('../img/dean-wagner.jpg');
     background-position: top center;
     background-size: cover;
     box-shadow: 0 0 0.4em rgba(0,0,0,0.8);
@@ -143,8 +185,43 @@ header #about_me {
     box-shadow: 0 0 0.4em rgba(0,0,0,0.4);
     margin-left: -20em;
     padding: 2em;
+    position: relative;
     transition: all 1.5s ease-out;
 }
+
+/* * * * * * * * *\
+ *  GitHub Icon  *
+\* * * * * * * * */
+
+.github-link {
+    bottom: 0.5em;
+    position: absolute;
+    right: 0.75em;
+}
+
+.github-icon {
+    filter: drop-shadow(0.15em 0.15em 0.15em rgba(0,0,0,0.5));
+    height: 2em;
+    width: 2em;
+}
+
+.github-link:hover .github-icon,
+.github-link:focus .github-icon {
+    transform: rotate(360deg) scale(1.5);
+}
+
+.github-link:hover .github-icon,
+.github-link:focus .github-icon {
+    filter: drop-shadow(0 0 0.2em var(--color-accent));
+}
+
+.github-path {
+    fill: var(--color-accent);
+}
+
+/* * * * * * * * *\
+ *     Main      *
+\* * * * * * * * */
 
 main {
     display: grid;
@@ -163,18 +240,10 @@ main #main_title {
     grid-row: 1;
     padding: 0 2em;
     text-align: right;
-    /*
-    border-bottom: 1px solid #000;
-    background: linear-gradient(to bottom right, rgba(255,255,255,0.3), rgba(0,0,0,0.3)) var(--color-accent);
-    box-shadow: 0 0 0.4em rgba(0,0,0,0.4);
-    color: var(--color-bg);
-    display: block;
-    */
 }
 
 main h2 {
     margin: 0;
-    text-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.8);
 }
 
 main section {
@@ -230,13 +299,23 @@ main section p {
     max-width: none;
 }
 
+/* * * * * * * * *\
+ *    Footer     *
+\* * * * * * * * */
+
 footer {
     color: var(--color-bg);
     display: flex;
-    gap: 1em;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5em;
+    justify-content: flex-start;
     padding: 4em 10vw;
     position: relative;
+    text-shadow: 0.1rem 0.1rem 0.1rem #000;
+}
+
+footer h2 {
+    margin: 0;
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
 }
 
@@ -278,24 +357,15 @@ footer #contact_info {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-}
-
-footer #contact_info h2 {
-    margin: 0 0 0.5em;
-    text-shadow: 0.1rem 0.1rem 0.1rem #000;
-}
-
-footer #contact_info a,
-footer #contact_info a:link,
-footer #contact_info a:visited {
-    margin: 0 0 0.5em;
+    justify-content: flex-start;
+    gap: 0.5em;
+    padding: 0.5em 0;
 }
 
 footer #contact_info address {
     font-size: 1.2em;
     font-style: normal;
-    margin: 0 0 0.5em;
+    text-align: left;
     white-space: nowrap;
 }
 
@@ -307,11 +377,11 @@ footer #contact_info address svg {
 footer #social {
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
     gap: 0.3em;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
+/* Lower BG Image */
 footer > svg {
     bottom: 0;
     filter: drop-shadow(0 -0.5em 0.3em rgba(0,0,0,0.4));
