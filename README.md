@@ -10,9 +10,9 @@ This project was created for the [Personal Portfolio assignment](https://www.the
 
 ### Provided Assets
 
-* Project Design Files: [PC](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio.png), [tablet](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20tablet.png), [mobile](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20mobile.png)
+* Project Design Files: [PC (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio.png), [tablet (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20tablet.png), [mobile (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20mobile.png)
 * Stock Photos: [Pexels.com](https://www.pexels.com/)
-* Icon Repository: [Devicon.dev/](https://devicon.dev/)
+* Icon Repository: [Devicon.dev](https://devicon.dev/)
 
 ### Objectives
 
