@@ -4,6 +4,10 @@
  */
 class Portfolio {
 
+    // Class Properties
+    light = [];
+    dark  = [];
+
     /**
      * Constructor
      * @constructor
@@ -114,6 +118,73 @@ class Portfolio {
         }];
 
         /* * * * * * * * * *\
+         *  Custom Theme   *
+        \* * * * * * * * * */
+
+        // Switchable Styles
+        const styles = [
+            'color-background',
+            'color-main-text',
+            'color-hero-text',
+            'shadow-main-box',
+            'shadow-main-title',
+            'shadow-main-link',
+            'glow-main-link',
+            'shadow-hero-link',
+            'glow-hero-link'
+        ];
+
+        // Get Values from CSS
+        styles.forEach(value => {
+            this.light[value] = this.getStyleProperty(value);
+            this.dark[value]  = this.getStyleProperty('dark-' + value);
+        });
+
+        // Auto-Load Dark Mode per User Settings
+        const isDark = parseInt(this.getStyleProperty('dark-mode'));
+        if (isDark) {
+            this.setStyleProperty('color-scheme', 'dark');
+            this.changeMode(this.dark);
+        }
+
+        // Color Picker
+        const accent = document.getElementById('accent_color');
+        accent.value = this.getStyleProperty('color-accent');
+        document.getElementById('color_picker').addEventListener('click', () => {
+            accent.click();
+        });
+
+        // Color Change
+        accent.addEventListener('change', (e) => {
+            const newColor  = e.target.value;
+            const rawColor  = newColor.replace('#', '');
+            this.setStyleProperty('color-accent', newColor);
+            if (parseInt(rawColor, 16) > 0xffffff / 2) {
+                this.setStyleProperty('color-hero-text',  this.dark['color-hero-text']);
+                this.setStyleProperty('shadow-hero-link', this.dark['shadow-hero-link']);
+                this.setStyleProperty('glow-hero-link',   this.dark['glow-hero-link']);
+            } else {
+                this.setStyleProperty('color-hero-text',  this.light['color-hero-text']);
+                this.setStyleProperty('shadow-hero-link', this.light['shadow-hero-link']);
+                this.setStyleProperty('glow-hero-link',   this.light['glow-hero-link']);
+            }
+        });
+
+        // Theme Change
+        document.getElementById('theme_picker').addEventListener('click', () => {
+            const dark = parseInt(this.getStyleProperty('dark-mode'));
+            if (dark) {
+                this.setStyleProperty('dark-mode', '0');
+                this.setStyleProperty('color-scheme', 'light');
+                this.changeMode(this.light);
+            } else {
+                this.setStyleProperty('dark-mode', '1');
+                this.setStyleProperty('color-scheme', 'dark');
+                this.changeMode(this.dark);
+            }
+        });
+
+        /* * * * * * * * * *\
          *   Build Page    *
         \* * * * * * * * * */
 
@@ -137,22 +208,6 @@ class Portfolio {
         const adr = str.split('').reverse().join('');
         document.getElementById('em' + 'ail').href = 'mai' + 'lto' + ':' + adr;
         document.getElementById('sp' + 'am').innerText = adr;
-
-        /* * * * * * * * * *\
-         * Event Listeners *
-        \* * * * * * * * * */
-
-        const accent = document.getElementById('accent_color');
-
-        // Color Picker
-        document.getElementById('color_picker').addEventListener('click', () => {
-            accent.click();
-        });
-
-        // Color Change
-        accent.addEventListener('change', (e) => {
-            this.setStyleProperty('color-accent', e.target.value);
-        });
     }
 
     /**
@@ -201,6 +256,18 @@ class Portfolio {
     setStyleProperty(prop, value) {
         const property = (prop === 'color-scheme') ? prop : '--' + prop;
         document.documentElement.style.setProperty(property, value);
+    }
+
+    /**
+     * Change Light/Dark Mode
+     * @param {object} colors - [this.light] or [this.dark]
+     */
+    changeMode(colors) {
+        for (let index in colors) {
+            if ((index !== 'color-hero-text') && (index !== 'shadow-hero-link') && (index !== 'glow-hero-link')) {
+                this.setStyleProperty(index, colors[index]);
+            }
+        }
     }
 }
 

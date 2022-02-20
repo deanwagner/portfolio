@@ -11,14 +11,32 @@
 \* * * * * * * * * * * */
 
 :root {
-    --color-accent : #0099cc;
-    --color-bg     : #fafafa;
-    --color-text   : #080808;
+    --color-accent      : #0099cc;
+    --color-background  : #fafafa;
+    --color-main-text   : #080808;
+    --color-hero-text   : #fafafa;
+    --shadow-main-box   : 0 0 0.4em rgba(0,0,0,0.4);
+    --shadow-main-title : 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.3);
+    --shadow-main-link  : 0.05rem 0.05rem 0.1rem rgba(0,0,0,0.5);
+    --glow-main-link    : 0 0 0.2rem var(--color-accent);
+    --shadow-hero-link  : 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.8);
+    --glow-hero-link    : 0 0 0.3rem var(--color-hero-text);
 
-    --font-base    : Calibri, Arial, sans-serif;
-    --font-title   : Georgia, Cambria, serif;
+    --dark-color-background : #333333;
+    --dark-color-main-text  : #cccccc;
+    --dark-color-hero-text  : #080808;
+    --dark-shadow-main-box   : 0 0 0.4em rgba(0,0,0,0.8);
+    --dark-shadow-main-title : 0.1rem 0.1rem 0.1rem #000000;
+    --dark-shadow-main-link  : 0.1rem 0.1rem 0.2rem #000000;
+    --dark-glow-main-link    : 0 0 0.2rem var(--color-accent);
+    --dark-shadow-hero-link  : 0.05rem 0.05rem 0.2rem rgba(0,0,0,0.5);
+    --dark-glow-hero-link    : 0 0 0.2rem var(--dark-color-hero-text);
 
-    color-scheme: light;
+    --dark-mode  : 0;
+    color-scheme : light;
+
+    --font-base  : Calibri, Arial, sans-serif;
+    --font-title : Georgia, Cambria, serif;
 }
 
 * {
@@ -37,8 +55,8 @@ html {
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
+    background-color: var(--color-background);
+    color: var(--color-main-text);
     display: flex;
     flex-direction: column;
     font-family: var(--font-base);
@@ -46,6 +64,7 @@ body {
     margin: 0;
     min-height: 100vh;
     padding: 0;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
 h1 {
@@ -56,7 +75,7 @@ h1 {
 h2 {
     font-family: var(--font-title);
     font-weight: normal;
-    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.3);
+    text-shadow: var(--shadow-main-title);
 }
 
 p {
@@ -73,16 +92,17 @@ a, a * {
 a, a:link, a:visited {
     color: var(--color-accent);
     text-decoration: none;
-    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.3);
+    text-shadow: var(--shadow-main-link);
 }
 
 a:hover, a:focus, a:active {
     text-decoration: underline;
-    text-shadow: 0 0 0.3rem var(--color-accent);
+    text-shadow: var(--glow-main-link);
 }
 
 svg .color_layer {
     fill: var(--color-accent);
+    transition: fill 0.3s ease-out;
 }
 
 /* * * * * * * * *\
@@ -119,6 +139,7 @@ header nav {
     padding: 0.5em 1em;
     position: fixed;
     top: 0;
+    transition: background-color 0.3s ease-out;
     width: 100%;
     z-index: 5;
 }
@@ -126,35 +147,55 @@ header nav {
 header nav a,
 header nav a:link,
 header nav a:visited {
-    color: var(--color-bg);
+    color: var(--color-hero-text);
     font-size: 1.5em;
     margin-right: 1em;
     opacity: 1;
     text-decoration: none;
-    text-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.8);
+    text-shadow: var(--shadow-hero-link);
 }
 
 header nav a:hover,
 header nav a:focus,
 header nav a:active {
     text-decoration: none;
-    text-shadow: 0 0 0.3rem var(--color-bg);
+    text-shadow: var(--glow-hero-link);
+}
+
+header nav #nav_styles label {
+    display: none;
 }
 
 header nav #nav_styles input {
     visibility: hidden;
 }
 
-header nav #nav_styles #color_picker {
-    background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.2), rgba(0,0,0,0.2));
+header nav #nav_styles span {
+    background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.3), rgba(0,0,0,0.3));
     border: 1px solid #000;
     border-radius: 0.9em;
     box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.8);
     cursor: pointer;
     display: inline-block;
     height: 1.8em;
+    margin: 0 0 0 0.5em;
+    opacity: 1;
     padding: 0;
+    transition: all 0.3s ease-out;
     width: 1.8em;
+}
+
+header nav #nav_styles span:hover,
+header nav #nav_styles span:focus,
+header nav #nav_styles span:active {
+    border: 1px solid #fafafa;
+    box-shadow: 0 0 0.3rem #fafafa;
+}
+
+header nav #nav_styles #theme_picker {
+    background:
+        radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.5), rgba(0,0,0,0.5)),
+        linear-gradient(to bottom right, rgba(0,0,0,0.9) 50%, rgba(255,255,255,0.9) 50%);
 }
 
 header #heading_wrapper {
@@ -173,7 +214,7 @@ header #heading_wrapper {
 }
 
 header h1 {
-    color: var(--color-bg);
+    color: #fafafa;
     font-size: 5vmin;
     margin: 0 auto 0.5rem;
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
@@ -181,12 +222,12 @@ header h1 {
 }
 
 header #about_me {
-    background-color: var(--color-bg);
-    box-shadow: 0 0 0.4em rgba(0,0,0,0.4);
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-main-box);
     margin-left: -20em;
     padding: 2em;
     position: relative;
-    transition: all 1.5s ease-out;
+    transition: margin 1.5s ease-out, background-color 0.3s ease-out;
 }
 
 /* * * * * * * * *\
@@ -200,7 +241,7 @@ header #about_me {
 }
 
 .github-icon {
-    filter: drop-shadow(0.15em 0.15em 0.15em rgba(0,0,0,0.5));
+    filter: drop-shadow(var(--shadow-main-link));
     height: 2em;
     width: 2em;
 }
@@ -212,7 +253,7 @@ header #about_me {
 
 .github-link:hover .github-icon,
 .github-link:focus .github-icon {
-    filter: drop-shadow(0 0 0.2em var(--color-accent));
+    filter: drop-shadow(var(--glow-main-link));
 }
 
 .github-path {
@@ -247,9 +288,10 @@ main h2 {
 }
 
 main section {
-    background-color: var(--color-bg);
-    box-shadow: 0 0 0.4em rgba(0,0,0,0.4);
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-main-box);
     max-width: 650px;
+    transition: all 0.3s ease-out;
 }
 
 main section .project_head {
@@ -266,7 +308,7 @@ main section .project_img {
 }
 
 main section .project_icon {
-    filter: drop-shadow(0.1em 0.1em 0.05em rgba(0,0,0,0.8));
+    filter: drop-shadow(var(--shadow-main-link));
     height: 1em;
     margin-right: 0.3em;
     vertical-align: top;
@@ -278,7 +320,7 @@ main section .project_head h3 {
 }
 
 main section .project_links svg {
-    filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5));
+    filter: drop-shadow(var(--shadow-main-link));
     height: 1em;
     width: 1em;
 }
@@ -290,13 +332,14 @@ main section .project_links svg path {
 main section .project_links a:hover svg,
 main section .project_links a:focus svg ,
 main section .project_links a:active svg {
-    filter: drop-shadow(0 0 0.2rem var(--color-accent));
+    filter: drop-shadow(var(--glow-main-link));
     transform: rotate(360deg) scale(1.5);
 }
 
 main section p {
     margin: 0 1em 1em;
     max-width: none;
+    text-align: left;
 }
 
 /* * * * * * * * *\
@@ -304,53 +347,13 @@ main section p {
 \* * * * * * * * */
 
 footer {
-    color: var(--color-bg);
+    color: var(--color-hero-text);
     display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    justify-content: flex-start;
+    gap: 5em;
+    justify-content: space-between;
     padding: 4em 10vw;
     position: relative;
-    text-shadow: 0.1rem 0.1rem 0.1rem #000;
-}
-
-footer h2 {
-    margin: 0;
-    text-shadow: 0.1rem 0.1rem 0.1rem #000;
-}
-
-footer a, footer a:link, footer a:visited {
-    color: var(--color-bg);
-    display: block;
-    font-size: 1.2em;
-    text-decoration: underline;
-    text-shadow: 0.1rem 0.1rem 0.1rem #000;
-    white-space: nowrap;
-}
-
-footer a:hover, footer a:focus, footer a:active {
-    color: var(--color-bg);
-    text-decoration: none;
-    text-shadow: 0 0 0.2rem var(--color-bg);
-}
-
-footer svg {
-    filter: drop-shadow(0.1rem 0.1rem 0.1rem #000);
-    height: 1.5em;
-    margin-right: 0.3em;
-    vertical-align: middle;
-    width: 1.5em;
-}
-
-footer svg path {
-    fill: var(--color-bg);
-}
-
-footer a:hover svg,
-footer a:focus svg,
-footer a:active svg {
-    filter: drop-shadow(0 0 0.2rem var(--color-bg));
-    transform: rotate(360deg) scale(1.5);
+    text-shadow: var(--shadow-hero-link);
 }
 
 footer #contact_info {
@@ -360,6 +363,49 @@ footer #contact_info {
     justify-content: flex-start;
     gap: 0.5em;
     padding: 0.5em 0;
+}
+
+footer #contact_info h2 {
+    margin: 0;
+    text-shadow: var(--shadow-hero-link);
+}
+
+footer #contact_info a,
+footer #contact_info a:link,
+footer #contact_info a:visited {
+    color: var(--color-hero-text);
+    display: block;
+    font-size: 1.2em;
+    text-decoration: underline;
+    text-shadow: var(--shadow-hero-link);
+    white-space: nowrap;
+}
+
+footer #contact_info a:hover,
+footer #contact_info a:focus,
+footer #contact_info a:active {
+    color: var(--color-hero-text);
+    text-decoration: none;
+    text-shadow: var(--glow-hero-link);
+}
+
+footer #contact_info svg {
+    filter: drop-shadow(var(--shadow-hero-link));
+    height: 1.5em;
+    margin-right: 0.3em;
+    vertical-align: middle;
+    width: 1.5em;
+}
+
+footer #contact_info svg path {
+    fill: var(--color-hero-text);
+}
+
+footer #contact_info a:hover svg,
+footer #contact_info a:focus svg,
+footer #contact_info a:active svg {
+    filter: drop-shadow(var(--glow-hero-link));
+    transform: rotate(360deg) scale(1.5);
 }
 
 footer #contact_info address {
@@ -374,11 +420,29 @@ footer #contact_info address svg {
     margin: 0.5em 0.3em 0 0 ;
 }
 
-footer #social {
+footer #contact_info #social {
     align-items: flex-start;
     display: flex;
     gap: 0.3em;
     justify-content: flex-start;
+}
+
+footer #sig_img {
+    align-items: flex-end;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+footer #sig_img #sig-svg {
+    filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(0,0,0,0.5));
+    height: auto;
+    width: 100%;
+}
+
+footer #sig_img #sig-svg .sig-whole {
+    fill: var(--color-hero-text);
+    transition: all 0.3s ease-out;
 }
 
 /* Lower BG Image */
@@ -390,4 +454,12 @@ footer > svg {
     position: absolute;
     width: 100%;
     z-index: -1;
+}
+
+/* * * * * * * * *\
+ * Media Queries *
+\* * * * * * * * */
+
+@media (prefers-color-scheme: dark) {
+    :root { --dark-mode: 1; }
 }
