@@ -175,24 +175,19 @@ class Portfolio {
                 this.changeMode(this.light);
             }
         } else {
+            // Default Settings
+            this.settings = {
+                accent : this.getStyleProperty('color-accent'),
+                theme  : 'light',
+                hero   : 'light'
+            };
+
             // Auto-Load Dark Mode per User Settings
             const isDark = parseInt(this.getStyleProperty('dark-mode'));
             if (isDark) {
-                // Default Settings
-                this.settings = {
-                    accent : this.getStyleProperty('color-accent'),
-                    theme  : 'dark',
-                    hero   : 'light'
-                };
+                this.settings.theme = 'dark';
                 this.setStyleProperty('color-scheme', 'dark');
                 this.changeMode(this.dark);
-            } else {
-                // Default Settings
-                this.settings = {
-                    accent : this.light['color-accent'],
-                    theme  : 'light',
-                    hero   : 'light'
-                };
             }
         }
 
