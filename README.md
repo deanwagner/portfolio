@@ -8,6 +8,8 @@ https://deanwagner.github.io/portfolio/
 
 ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-red.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-green.png)
 
+![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-mobile-dark.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-mobile-magenta.png)
+
 This project was created for the [Personal Portfolio assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css/lessons/personal-portfolio) as part of [The Odin Project](https://www.theodinproject.com) curriculum. I met all the assignment objectives and then expanded on it with my own concepts to make it more functional and user-friendly.
 
 I created overall dark and light themes that autoload based on the user's browser/OS settings as well as the ability to change the accent color.
