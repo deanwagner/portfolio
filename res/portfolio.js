@@ -1,18 +1,28 @@
 /**
  * Portfolio
  * @class
+ * @property {array}  light    - Light Mode CSS Values
+ * @property {array}  dark     - Dark Mode CSS Values
+ * @property {object} storage  - LocalStorage
+ * @property {object} settings - User Settings
+ * @property {object} restore  - Clear Settings Element
  */
 class Portfolio {
 
     // Class Properties
-    light = [];
-    dark  = [];
+    light    = [];
+    dark     = [];
+    storage  = {};
+    settings = {};
 
     /**
      * Constructor
      * @constructor
      */
     constructor() {
+
+        // LocalStorage
+        this.storage = window.localStorage;
 
         /* * * * * * * * * *\
          *    Projects     *
@@ -134,17 +144,60 @@ class Portfolio {
             'glow-hero-link'
         ];
 
+        // Clear Settings Button
+        this.restore = document.getElementById('clear_settings');
+
         // Get Values from CSS
         styles.forEach(value => {
             this.light[value] = this.getStyleProperty(value);
             this.dark[value]  = this.getStyleProperty('dark-' + value);
         });
 
-        // Auto-Load Dark Mode per User Settings
-        const isDark = parseInt(this.getStyleProperty('dark-mode'));
-        if (isDark) {
-            this.setStyleProperty('color-scheme', 'dark');
-            this.changeMode(this.dark);
+        // Load Settings
+        if (this.storage.hasOwnProperty('settings')) {
+            // Load from LocalStorage
+            this.settings = JSON.parse(this.storage.getItem('settings'));
+            this.setStyleProperty('color-accent', this.settings.accent);
+            this.setStyleProperty('color-scheme', this.settings.theme);
+            this.restore.style.display = 'inline-block';
+
+            if (this.settings.hero === 'dark') {
+                this.setStyleProperty('color-hero-text',  this.dark['color-hero-text']);
+                this.setStyleProperty('shadow-hero-link', this.dark['shadow-hero-link']);
+                this.setStyleProperty('glow-hero-link',   this.dark['glow-hero-link']);
+            } else {
+                this.setStyleProperty('color-hero-text',  this.light['color-hero-text']);
+                this.setStyleProperty('shadow-hero-link', this.light['shadow-hero-link']);
+                this.setStyleProperty('glow-hero-link',   this.light['glow-hero-link']);
+            }
+
+            if (this.settings.theme === 'dark') {
+                this.setStyleProperty('dark-mode', '1');
+                this.changeMode(this.dark);
+            } else {
+                this.setStyleProperty('dark-mode', '0');
+                this.changeMode(this.light);
+            }
+        } else {
+            // Auto-Load Dark Mode per User Settings
+            const isDark = parseInt(this.getStyleProperty('dark-mode'));
+            if (isDark) {
+                // Default Settings
+                this.settings = {
+                    accent : this.getStyleProperty('color-accent'),
+                    theme  : 'dark',
+                    hero   : 'light'
+                };
+                this.setStyleProperty('color-scheme', 'dark');
+                this.changeMode(this.dark);
+            } else {
+                // Default Settings
+                this.settings = {
+                    accent : this.light['color-accent'],
+                    theme  : 'light',
+                    hero   : 'light'
+                };
+            }
         }
 
         // Color Picker
@@ -156,32 +209,45 @@ class Portfolio {
 
         // Color Change
         accent.addEventListener('change', (e) => {
-            const newColor  = e.target.value;
-            const rawColor  = newColor.replace('#', '');
+            const newColor = e.target.value;
+            const rawColor = newColor.replace('#', '');
+            this.settings.accent = newColor;
             this.setStyleProperty('color-accent', newColor);
             if (parseInt(rawColor, 16) > 0xffffff / 2) {
+                this.settings.hero = 'dark';
                 this.setStyleProperty('color-hero-text',  this.dark['color-hero-text']);
                 this.setStyleProperty('shadow-hero-link', this.dark['shadow-hero-link']);
                 this.setStyleProperty('glow-hero-link',   this.dark['glow-hero-link']);
             } else {
+                this.settings.hero = 'light';
                 this.setStyleProperty('color-hero-text',  this.light['color-hero-text']);
                 this.setStyleProperty('shadow-hero-link', this.light['shadow-hero-link']);
                 this.setStyleProperty('glow-hero-link',   this.light['glow-hero-link']);
             }
+            this.save();
         });
 
         // Theme Change
         document.getElementById('theme_picker').addEventListener('click', () => {
             const dark = parseInt(this.getStyleProperty('dark-mode'));
             if (dark) {
+                this.settings.theme = 'light';
                 this.setStyleProperty('dark-mode', '0');
                 this.setStyleProperty('color-scheme', 'light');
                 this.changeMode(this.light);
             } else {
+                this.settings.theme = 'dark';
                 this.setStyleProperty('dark-mode', '1');
                 this.setStyleProperty('color-scheme', 'dark');
                 this.changeMode(this.dark);
             }
+            this.save();
+        });
+
+        // Clear Settings
+        this.restore.addEventListener('click', () => {
+            this.storage.clear();
+            location.reload();
         });
 
         /* * * * * * * * * *\
@@ -268,6 +334,14 @@ class Portfolio {
                 this.setStyleProperty(index, colors[index]);
             }
         }
+    }
+
+    /**
+     * Save Settings in LocalStorage
+     */
+    save() {
+        this.storage.setItem('settings', JSON.stringify(this.settings));
+        this.restore.style.display = 'inline-block';
     }
 }
 
