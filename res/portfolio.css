@@ -167,7 +167,13 @@ header nav #nav_styles label {
 }
 
 header nav #nav_styles input {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
     visibility: hidden;
+    width: 0;
 }
 
 header nav #nav_styles span {
@@ -276,15 +282,12 @@ main {
     width: 100%;
 }
 
-main #main_title {
+main h2 {
     grid-column: 1 / span 3;
     grid-row: 1;
+    margin: 0;
     padding: 0 2em;
     text-align: right;
-}
-
-main h2 {
-    margin: 0;
 }
 
 main section {
@@ -351,7 +354,7 @@ footer {
     display: flex;
     gap: 5em;
     justify-content: space-between;
-    padding: 4em 10vw;
+    padding: 15em 10vw 4em;
     position: relative;
     text-shadow: var(--shadow-hero-link);
 }
@@ -462,4 +465,16 @@ footer > svg {
 
 @media (prefers-color-scheme: dark) {
     :root { --dark-mode: 1; }
+}
+
+@media screen and (orientation: portrait) {
+    body { font-size: 10pt; }
+    header { flex-direction: column; min-height: auto; padding: 4em 0 2em; }
+    header nav a, header nav a:link, header nav a:visited { font-size: 1rem; margin-right: 0.5rem; }
+    header nav #nav_styles span { height: 1rem; width: 1rem; }
+    header #about_me { margin: -2em 0 0; }
+    main { grid-template-columns: 1fr; grid-template-rows: auto; max-width: 90vw; }
+    main h2 { grid-column: 1; grid-row: 1; text-align: left; margin: 0; }
+    footer { flex-direction: column; padding: 4em 1em 1em; }
+    footer #contact_info { padding: 0 4em; }
 }
