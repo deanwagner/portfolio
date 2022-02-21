@@ -4,10 +4,12 @@
 Live Demo:  
 https://deanwagner.github.io/portfolio/
 
+#### PC View:  
 ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-light.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-dark.png)
 
 ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-red.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-green.png)
 
+#### Mobile View:  
 ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-mobile-dark.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-mobile-magenta.png)
 
 This project was created for the [Personal Portfolio assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css/lessons/personal-portfolio) as part of [The Odin Project](https://www.theodinproject.com) curriculum. I met all the assignment objectives and then expanded on it with my own concepts to make it more functional and user-friendly.
