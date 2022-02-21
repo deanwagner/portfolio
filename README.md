@@ -19,9 +19,9 @@ I created overall dark and light themes that autoload based on the user's browse
 ### Provided Assets
 
 * Project Design Files:   
-..- [PC (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio.png)  
-..- [Tablet (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20tablet.png)  
-..- [Mobile (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20mobile.png)  
+  - [PC (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio.png)  
+  - [Tablet (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20tablet.png)  
+  - [Mobile (PNG)](https://cdn.statically.io/gh/TheOdinProject/curriculum/main/html_css/project_portfolio/portfolio%20mobile.png)  
 * ~~Stock Photos:~~ [Pexels.com](https://www.pexels.com/)
 * ~~Icon Repository:~~ [Devicon.dev](https://devicon.dev/)
 
