@@ -7,7 +7,7 @@ https://deanwagner.github.io/portfolio/
 #### PC View:  
 ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-light.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-dark.png)
 
-![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-red.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-green.png)
+![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-red.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-pc-amber.png)
 
 #### Mobile View:  
 ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-mobile-dark.png) ![Project Screenshot](https://deanwagner.github.io/portfolio/img/portfolio-mobile-magenta.png)
