@@ -286,8 +286,8 @@ main h2 {
     grid-column: 1 / span 3;
     grid-row: 1;
     margin: 0;
-    padding: 0 2em;
-    text-align: right;
+    padding: 0;
+    text-align: center;
 }
 
 main section {
@@ -354,7 +354,7 @@ footer {
     display: flex;
     gap: 5em;
     justify-content: space-between;
-    padding: 15em 10vw 4em;
+    padding: 8em 10vw 4em;
     position: relative;
     text-shadow: var(--shadow-hero-link);
 }
@@ -474,7 +474,7 @@ footer > svg {
     header nav #nav_styles span { height: 1rem; width: 1rem; }
     header #about_me { margin: -2em 0 0; }
     main { grid-template-columns: 1fr; grid-template-rows: auto; max-width: 90vw; }
-    main h2 { grid-column: 1; grid-row: 1; text-align: left; margin: 0; }
+    main h2 { grid-column: 1; grid-row: 1; margin: 0; }
     footer { flex-direction: column; padding: 4em 1em 1em; }
     footer #contact_info { padding: 0 4em; }
 }
