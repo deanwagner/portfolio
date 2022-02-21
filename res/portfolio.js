@@ -162,13 +162,9 @@ class Portfolio {
             this.restore.style.display = 'inline-block';
 
             if (this.settings.hero === 'dark') {
-                this.setStyleProperty('color-hero-text',  this.dark['color-hero-text']);
-                this.setStyleProperty('shadow-hero-link', this.dark['shadow-hero-link']);
-                this.setStyleProperty('glow-hero-link',   this.dark['glow-hero-link']);
+                this.setHeroColors(this.dark);
             } else {
-                this.setStyleProperty('color-hero-text',  this.light['color-hero-text']);
-                this.setStyleProperty('shadow-hero-link', this.light['shadow-hero-link']);
-                this.setStyleProperty('glow-hero-link',   this.light['glow-hero-link']);
+                this.setHeroColors(this.light);
             }
 
             if (this.settings.theme === 'dark') {
@@ -215,14 +211,10 @@ class Portfolio {
             this.setStyleProperty('color-accent', newColor);
             if (parseInt(rawColor, 16) > 0xffffff / 2) {
                 this.settings.hero = 'dark';
-                this.setStyleProperty('color-hero-text',  this.dark['color-hero-text']);
-                this.setStyleProperty('shadow-hero-link', this.dark['shadow-hero-link']);
-                this.setStyleProperty('glow-hero-link',   this.dark['glow-hero-link']);
+                this.setHeroColors(this.dark);
             } else {
                 this.settings.hero = 'light';
-                this.setStyleProperty('color-hero-text',  this.light['color-hero-text']);
-                this.setStyleProperty('shadow-hero-link', this.light['shadow-hero-link']);
-                this.setStyleProperty('glow-hero-link',   this.light['glow-hero-link']);
+                this.setHeroColors(this.light);
             }
             this.save();
         });
@@ -322,6 +314,16 @@ class Portfolio {
     setStyleProperty(prop, value) {
         const property = (prop === 'color-scheme') ? prop : '--' + prop;
         document.documentElement.style.setProperty(property, value);
+    }
+
+    /**
+     * Change Hero Section CSS
+     * @param {array} colors - [this.light] or [this.dark]
+     */
+    setHeroColors(colors) {
+        this.setStyleProperty('color-hero-text',  colors['color-hero-text']);
+        this.setStyleProperty('shadow-hero-link', colors['shadow-hero-link']);
+        this.setStyleProperty('glow-hero-link',   colors['glow-hero-link']);
     }
 
     /**
