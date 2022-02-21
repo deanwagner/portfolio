@@ -124,6 +124,7 @@ header > svg {
     left: 0;
     position: absolute;
     top: 0;
+    transform: scale(-1,1);
     width: 100%;
     z-index: -1;
 }
@@ -177,7 +178,7 @@ header nav #nav_styles input {
 }
 
 header nav #nav_styles span {
-    background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.3), rgba(0,0,0,0.3));
+    background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.3), rgba(0,0,0,0.4));
     border: 1px solid #000;
     border-radius: 0.9em;
     box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.8);
@@ -194,14 +195,23 @@ header nav #nav_styles span {
 header nav #nav_styles span:hover,
 header nav #nav_styles span:focus,
 header nav #nav_styles span:active {
+    background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.5), rgba(0,0,0,0.6));
     border: 1px solid #fafafa;
     box-shadow: 0 0 0.3rem #fafafa;
 }
 
 header nav #nav_styles #theme_picker {
     background:
-        radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.5), rgba(0,0,0,0.5)),
-        linear-gradient(to bottom right, rgba(0,0,0,0.9) 50%, rgba(255,255,255,0.9) 50%);
+            radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.5), rgba(0,0,0,0.6)),
+            linear-gradient(to bottom right, rgba(0,0,0,0.9) 50%, rgba(255,255,255,0.9) 50%);
+}
+
+header nav #nav_styles #theme_picker:hover,
+header nav #nav_styles #theme_picker:focus,
+header nav #nav_styles #theme_picker:active {
+    background:
+            radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.7), rgba(0,0,0,0.8)),
+            linear-gradient(to bottom right, rgba(0,0,0,0.9) 50%, rgba(255,255,255,0.9) 50%);
 }
 
 header #heading_wrapper {
@@ -286,13 +296,13 @@ main h2 {
     grid-column: 1 / span 3;
     grid-row: 1;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    padding: 0 ;
 }
 
 main section {
     background-color: var(--color-background);
     box-shadow: var(--shadow-main-box);
+    margin: 0 auto;
     max-width: 650px;
     transition: all 0.3s ease-out;
 }
@@ -455,6 +465,7 @@ footer > svg {
     height: auto;
     left: 0;
     position: absolute;
+    transform: scale(-1,1);
     width: 100%;
     z-index: -1;
 }
@@ -475,6 +486,7 @@ footer > svg {
     header #about_me { margin: -2em 0 0; }
     main { grid-template-columns: 1fr; grid-template-rows: auto; max-width: 90vw; }
     main h2 { grid-column: 1; grid-row: 1; margin: 0; }
-    footer { flex-direction: column; padding: 4em 1em 1em; }
-    footer #contact_info { padding: 0 4em; }
+    footer { flex-direction: column; gap: 0; padding: 2em; }
+    footer #contact_info { gap: 0.3em; padding: 0; }
+    footer #sig_img #sig-svg { bottom: 0.5rem; position: absolute; right: 0.5rem; width: 33%; }
 }
