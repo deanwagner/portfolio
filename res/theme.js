@@ -39,9 +39,7 @@ class Theme {
             'shadow-main-box',
             'shadow-main-title',
             'shadow-main-link',
-            'glow-main-link',
-            'shadow-hero-link',
-            'glow-hero-link'
+            'shadow-hero-link'
         ];
 
         // Clear Settings Button
@@ -174,7 +172,7 @@ class Theme {
      */
     changeMode(colors) {
         for (let index in colors) {
-            if ((index !== 'color-hero-text') && (index !== 'shadow-hero-link') && (index !== 'glow-hero-link')) {
+            if ((index !== 'color-hero-text') && (index !== 'shadow-hero-link')) {
                 this.setStyleProperty(index, colors[index]);
             }
         }

@@ -11,6 +11,7 @@
 \* * * * * * * * * * * */
 
 :root {
+    /* Default/Light Theme */
     --color-accent      : #0099cc;
     --color-background  : #fafafa;
     --color-main-text   : #080808;
@@ -18,23 +19,24 @@
     --shadow-main-box   : 0 0 0.4em rgba(0,0,0,0.4);
     --shadow-main-title : 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.3);
     --shadow-main-link  : 0.05rem 0.05rem 0.1rem rgba(0,0,0,0.5);
-    --glow-main-link    : 0 0 0.2rem var(--color-accent);
     --shadow-hero-link  : 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.8);
-    --glow-hero-link    : 0 0 0.3rem var(--color-hero-text);
 
-    --dark-color-background : #333333;
-    --dark-color-main-text  : #cccccc;
-    --dark-color-hero-text  : #080808;
+    /* Dark Theme */
+    --dark-color-background  : #333333;
+    --dark-color-main-text   : #cccccc;
+    --dark-color-hero-text   : #080808;
     --dark-shadow-main-box   : 0 0 0.4em rgba(0,0,0,0.8);
     --dark-shadow-main-title : 0.1rem 0.1rem 0.1rem #000000;
     --dark-shadow-main-link  : 0.1rem 0.1rem 0.2rem #000000;
-    --dark-glow-main-link    : 0 0 0.2rem var(--color-accent);
     --dark-shadow-hero-link  : 0.05rem 0.05rem 0.2rem rgba(0,0,0,0.5);
-    --dark-glow-hero-link    : 0 0 0.2rem var(--dark-color-hero-text);
 
-    --dark-mode  : 0;
+    /* Flag Changed in Media Queries */
+    --dark-mode : 0;
+
+    /* Browser Theme */
     color-scheme : light;
 
+    /* Font Families */
     --font-base  : Calibri, Arial, sans-serif;
     --font-title : Georgia, Cambria, serif;
 }
@@ -97,7 +99,7 @@ a, a:link, a:visited {
 
 a:hover, a:focus, a:active {
     text-decoration: underline;
-    text-shadow: var(--glow-main-link);
+    text-shadow: 0 0 0.2rem var(--color-accent);
 }
 
 svg .color_layer {
@@ -160,7 +162,7 @@ header nav a:hover,
 header nav a:focus,
 header nav a:active {
     text-decoration: none;
-    text-shadow: var(--glow-hero-link);
+    text-shadow: 0 0 0.2rem var(--dark-color-hero-text);
 }
 
 header nav #nav_styles label {
@@ -281,7 +283,7 @@ header #about_me {
 
 .github-link:hover .github-icon,
 .github-link:focus .github-icon {
-    filter: drop-shadow(var(--glow-main-link));
+    filter: drop-shadow(0 0 0.2rem var(--color-accent));
 }
 
 .github-path {
@@ -357,7 +359,7 @@ main section .project_links svg path {
 main section .project_links a:hover svg,
 main section .project_links a:focus svg ,
 main section .project_links a:active svg {
-    filter: drop-shadow(var(--glow-main-link));
+    filter: drop-shadow(0 0 0.2rem var(--color-accent));
     transform: rotate(360deg) scale(1.5);
 }
 
@@ -411,7 +413,7 @@ footer #contact_info a:focus,
 footer #contact_info a:active {
     color: var(--color-hero-text);
     text-decoration: none;
-    text-shadow: var(--glow-hero-link);
+    text-shadow: 0 0 0.2rem var(--dark-color-hero-text);
 }
 
 footer #contact_info svg {
@@ -429,7 +431,7 @@ footer #contact_info svg path {
 footer #contact_info a:hover svg,
 footer #contact_info a:focus svg,
 footer #contact_info a:active svg {
-    filter: drop-shadow(var(--glow-hero-link));
+    filter: drop-shadow(0 0 0.2rem var(--dark-color-hero-text));
     transform: rotate(360deg) scale(1.5);
 }
 
