@@ -162,7 +162,7 @@ header nav a:hover,
 header nav a:focus,
 header nav a:active {
     text-decoration: none;
-    text-shadow: 0 0 0.2rem var(--dark-color-hero-text);
+    text-shadow: 0 0 0.2rem var(--color-hero-text);
 }
 
 header nav #nav_styles label {
@@ -413,7 +413,7 @@ footer #contact_info a:focus,
 footer #contact_info a:active {
     color: var(--color-hero-text);
     text-decoration: none;
-    text-shadow: 0 0 0.2rem var(--dark-color-hero-text);
+    text-shadow: 0 0 0.2rem var(--color-hero-text);
 }
 
 footer #contact_info svg {
@@ -431,7 +431,7 @@ footer #contact_info svg path {
 footer #contact_info a:hover svg,
 footer #contact_info a:focus svg,
 footer #contact_info a:active svg {
-    filter: drop-shadow(0 0 0.2rem var(--dark-color-hero-text));
+    filter: drop-shadow(0 0 0.2rem var(--color-hero-text));
     transform: rotate(360deg) scale(1.5);
 }
 
