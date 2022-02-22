@@ -1,3 +1,6 @@
+"use strict";
+
+// Import Modules
 import Theme    from './theme.js';
 import Projects from './projects.js';
 import Social   from './social.js';

@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Social Media Links
  * @class
@@ -49,7 +51,7 @@ class Social {
      */
     build() {
         this.social.forEach(media => {
-            document.getElementById('social').innerHTML += this.insert(media);
+            document.getElementById('social').innerHTML += this.template(media);
         });
     }
 
@@ -58,7 +60,7 @@ class Social {
      * @param {object} media - Social Object
      * @returns {string} - HTML String
      */
-    insert(media) {
+    template(media) {
         return `<a title="${media.name}" href="${media.link}" rel="external" target="_blank">${media.icon}</a>`;
     }
 }

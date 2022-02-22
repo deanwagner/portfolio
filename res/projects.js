@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Projects
  * @class
@@ -85,7 +87,7 @@ class Projects {
     build() {
         this.projects.forEach(project => {
             const section = document.createElement('section');
-            section.innerHTML = this.insert(project);
+            section.innerHTML = this.template(project);
             document.getElementById('projects').appendChild(section);
         });
     }
@@ -95,7 +97,7 @@ class Projects {
      * @param {object} project - Project Object
      * @returns {string} - HTML String
      */
-    insert(project) {
+    template(project) {
         return `
             <img class="project_img" src="${project.img}" alt="Project Screenshot" loading="lazy">
             <div class="project_head">
