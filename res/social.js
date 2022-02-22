@@ -1,3 +1,9 @@
+/**
+ * Social Media Links
+ * @class
+ * @property {array} social - Social Media Objects
+ * @author Dean Wagner <info@deanwagner.net>
+ */
 class Social {
     social = [{
         name : 'deanwagner.net',
@@ -30,14 +36,16 @@ class Social {
     }];
 
     /**
-     *
+     * Constructor
+     * @constructor
      */
     constructor() {
+        // Build Social Media Links
         this.build();
     }
 
     /**
-     *
+     * Build Social Media Links
      */
     build() {
         this.social.forEach(media => {
@@ -46,7 +54,7 @@ class Social {
     }
 
     /**
-     * Project HTML Template
+     * Social Media Link HTML Template
      * @param {object} media - Social Object
      * @returns {string} - HTML String
      */

@@ -1,18 +1,19 @@
-import Settings from './settings.js';
+import Theme    from './theme.js';
 import Projects from './projects.js';
 import Social   from './social.js';
 
 /**
  * Portfolio
  * @class
- * @property {object} settings - Settings Object
+ * @property {object} theme    - Theme Object
  * @property {object} projects - Projects Object
  * @property {object} social   - Social Object
+ * @author Dean Wagner <info@deanwagner.net>
  */
 class Portfolio {
 
     // Class Properties
-    settings = {};
+    theme    = {};
     projects = {};
     social   = {};
 
@@ -23,7 +24,7 @@ class Portfolio {
     constructor() {
 
         // Load Modules
-        this.settings = new Settings();
+        this.theme    = new Theme();
         this.projects = new Projects();
         this.social   = new Social();
 

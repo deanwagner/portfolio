@@ -1,3 +1,9 @@
+/**
+ * Projects
+ * @class
+ * @property {array} projects - Project Objects
+ * @author Dean Wagner <info@deanwagner.net>
+ */
 class Projects {
     projects = [{
         name : 'LCD Calculator',
@@ -65,14 +71,16 @@ class Projects {
     }];
 
     /**
-     *
+     * Constructor
+     * @constructor
      */
     constructor() {
+        // Build Projects
         this.build();
     }
 
     /**
-     *
+     * Build Projects
      */
     build() {
         this.projects.forEach(project => {

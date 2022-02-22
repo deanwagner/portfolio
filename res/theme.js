@@ -1,5 +1,17 @@
-class Settings {
+/**
+ * Theme Manager
+ * @class
+ * @property {array} light    - Light Theme CSS Properties
+ * @property {array} dark     - Dark Theme CSS Properties
+ * @property {string} accent  - Accent Color
+ * @property {string} theme   - Light/Dark Theme
+ * @property {string} hero    - Light/Dark Hero Section Text
+ * @property {object} storage - LocalStorage
+ * @author Dean Wagner <info@deanwagner.net>
+ */
+class Theme {
 
+    // Class Properties
     light   = [];
     dark    = [];
     accent  = '';
@@ -7,6 +19,10 @@ class Settings {
     hero    = 'light';
     storage = {};
 
+    /**
+     * Constructor
+     * @constructor
+     */
     constructor() {
 
         // LocalStorage
@@ -45,16 +61,19 @@ class Settings {
             this.theme  = saved.theme;
             this.hero   = saved.hero;
 
+            // Update CSS
             this.setStyleProperty('color-accent', this.accent);
             this.setStyleProperty('color-scheme', this.theme);
             this.restore.style.display = 'inline-block';
 
+            // Hero Text
             if (this.hero === 'dark') {
                 this.setHeroColors(this.dark);
             } else {
                 this.setHeroColors(this.light);
             }
 
+            // Main Theme
             if (this.theme === 'dark') {
                 this.setStyleProperty('dark-mode', '1');
                 this.changeMode(this.dark);
@@ -165,9 +184,13 @@ class Settings {
      * Save Settings in LocalStorage
      */
     save() {
-        this.storage.setItem('settings', JSON.stringify(this.settings));
+        this.storage.setItem('settings', JSON.stringify({
+            accent : this.accent,
+            theme  : this.theme,
+            hero   : this.hero
+        }));
         this.restore.style.display = 'inline-block';
     }
 }
 
-export default Settings;
+export default Theme;
