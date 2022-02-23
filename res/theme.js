@@ -54,9 +54,9 @@ class Theme {
         });
 
         // Load Settings
-        if (this.storage.hasOwnProperty('settings')) {
+        if (this.storage.hasOwnProperty('port_settings')) {
             // Load from LocalStorage
-            const saved = JSON.parse(this.storage.getItem('settings'));
+            const saved = JSON.parse(this.storage.getItem('port_settings'));
             this.accent = saved.accent;
             this.theme  = saved.theme;
             this.hero   = saved.hero;
@@ -184,7 +184,7 @@ class Theme {
      * Save Settings in LocalStorage
      */
     save() {
-        this.storage.setItem('settings', JSON.stringify({
+        this.storage.setItem('port_settings', JSON.stringify({
             accent : this.accent,
             theme  : this.theme,
             hero   : this.hero
