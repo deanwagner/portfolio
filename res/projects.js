@@ -16,7 +16,7 @@ class Projects {
         img  : 'https://deanwagner.github.io/calculator/img/calculator-screenshot.png'
     }, {
         name : 'Paint',
-        desc : 'A Paint-by-Pixel App written in JavaScript.',
+        desc : 'A Paint-by-Pixel Image Creation App with save, export, and print abilities.',
         live : 'https://deanwagner.github.io/paint/',
         repo : 'https://github.com/deanwagner/paint',
         icon : 'https://deanwagner.github.io/paint/img/paint.png',
