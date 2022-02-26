@@ -42,12 +42,12 @@
 
     /* Transitions */
     --transition-all   : none;
-    --transition-bg    : none;
-    --transition-color : none;
-    --transition-fill  : none;
     --enable-all       : all 0.3s ease-out;
+    --transition-bg    : none;
     --enable-bg        : background-color 0.3s ease-out;
+    --transition-color : none;
     --enable-color     : color 0.3s ease-out;
+    --transition-fill  : none;
     --enable-fill      : fill 0.3s ease-out;
 }
 
