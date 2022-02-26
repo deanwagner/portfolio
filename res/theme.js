@@ -91,6 +91,12 @@ class Theme {
             }
         }
 
+        // Enable Transitions
+        this.setStyleProperty('transition-all',   this.getStyleProperty('enable-all'));
+        this.setStyleProperty('transition-bg',    this.getStyleProperty('enable-bg'));
+        this.setStyleProperty('transition-color', this.getStyleProperty('enable-color'));
+        this.setStyleProperty('transition-fill',  this.getStyleProperty('enable-fill'));
+
         // Color Picker
         const accent = document.getElementById('accent_color');
         accent.value = this.getStyleProperty('color-accent');

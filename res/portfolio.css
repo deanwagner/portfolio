@@ -39,6 +39,16 @@
     /* Font Families */
     --font-base  : Calibri, Arial, sans-serif;
     --font-title : Georgia, Cambria, serif;
+
+    /* Transitions */
+    --transition-all   : none;
+    --transition-bg    : none;
+    --transition-color : none;
+    --transition-fill  : none;
+    --enable-all       : all 0.3s ease-out;
+    --enable-bg        : background-color 0.3s ease-out;
+    --enable-color     : color 0.3s ease-out;
+    --enable-fill      : fill 0.3s ease-out;
 }
 
 * {
@@ -66,7 +76,7 @@ body {
     margin: 0;
     min-height: 100vh;
     padding: 0;
-    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    transition: var(--transition-bg), var(--transition-color);
 }
 
 h1 {
@@ -88,7 +98,7 @@ p {
 
 a, a * {
     cursor: pointer;
-    transition: all 0.3s ease-out;
+    transition: var(--transition-all);
 }
 
 a, a:link, a:visited {
@@ -104,7 +114,7 @@ a:hover, a:focus, a:active {
 
 svg .color_layer {
     fill: var(--color-accent);
-    transition: fill 0.3s ease-out;
+    transition: var(--transition-fill);
 }
 
 /* * * * * * * * *\
@@ -142,7 +152,7 @@ header nav {
     padding: 0.5em 1em;
     position: fixed;
     top: 0;
-    transition: background-color 0.3s ease-out;
+    transition: var(--transition-bg);
     width: 100%;
     z-index: 5;
 }
@@ -190,7 +200,7 @@ header nav #nav_styles span {
     margin: 0 0 0 0.5em;
     opacity: 1;
     padding: 0;
-    transition: all 0.3s ease-out;
+    transition: var(--transition-all);
     width: 1.8em;
 }
 
@@ -318,7 +328,7 @@ main section {
     box-shadow: var(--shadow-main-box);
     margin: 0 auto;
     max-width: 650px;
-    transition: all 0.3s ease-out;
+    transition: var(--transition-all);
 }
 
 main section .project_head {
@@ -469,7 +479,7 @@ footer #sig_img #sig-svg {
 
 footer #sig_img #sig-svg .sig-whole {
     fill: var(--color-hero-text);
-    transition: all 0.3s ease-out;
+    transition: var(--transition-all);
 }
 
 /* Lower BG Image */
