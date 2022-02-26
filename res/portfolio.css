@@ -230,7 +230,7 @@ header nav #nav_styles #theme_picker:active {
 
 header #heading_wrapper {
     align-items: flex-end;
-    background-image: url('../img/dean-wagner.jpg');
+    background-image: url('../img/dean-wagner.webp');
     background-position: top center;
     background-size: cover;
     box-shadow: 0 0 0.4em rgba(0,0,0,0.8);
