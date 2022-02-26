@@ -139,7 +139,7 @@ class Theme {
 
         // Clear Settings
         this.restore.addEventListener('click', () => {
-            this.storage.clear();
+            this.storage.removeItem('port_settings');
             location.reload();
         });
     }
