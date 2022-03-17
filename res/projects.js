@@ -55,7 +55,7 @@ class Projects {
         live : 'https://deanwagner.github.io/dashboard/',
         repo : 'https://github.com/deanwagner/dashboard',
         icon : 'https://deanwagner.github.io/dashboard/img/icon.svg',
-        img  : 'https://deanwagner.github.io/dashboard/img/dashboard-pc-light.png'
+        img  : 'https://deanwagner.github.io/dashboard/img/dashboard-screenshot-light.png'
     }, {
         name : 'Sign-Up Form',
         desc : 'A Sign-Up Form Mock-Up with Browser-Based Input Validation.',
