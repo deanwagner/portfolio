@@ -79,11 +79,6 @@ body {
     transition: var(--transition-bg), var(--transition-color);
 }
 
-h1 {
-    font-family: var(--font-title);
-    font-weight: normal;
-}
-
 h2 {
     font-family: var(--font-title);
     font-weight: normal;
@@ -247,17 +242,10 @@ header #heading_wrapper {
     max-width: 400px;
     overflow: hidden;
     padding: 2em 2em 0;
+    position: relative;
     transition: var(--transition-all);
     width: 50vmin;
     z-index: 2;
-    /*
-    align-items: flex-end;
-    background-image: url('../img/dean-wagner.webp');
-    background-position: top center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    */
 }
 
 header #heading_wrapper svg {
@@ -274,12 +262,19 @@ header #heading_wrapper svg #silhouette-base {
 }
 
 header h1 {
-    display: none;
-    color: #fafafa;
+    bottom: 0;
+    color: #ccc;
+    font-family: var(--font-title);
     font-size: 5vmin;
+    font-weight: normal;
+    left: 0;
     margin: 0 auto 0.5rem;
+    position: absolute;
+    text-align: center;
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
+    transition: var(--transition-all);
     white-space: nowrap;
+    width: 100%;
 }
 
 header #about_me {
